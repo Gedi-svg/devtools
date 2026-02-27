@@ -1,5 +1,11 @@
 # @layerzerolabs/devtools-move
 
+## 2.0.0
+
+### Major Changes
+
+- 128b697: update initia.js version and object creation seed derivation
+
 ## 1.0.18
 
 ### Patch Changes
