@@ -2,7 +2,7 @@
 
 pragma solidity ^0.8.20;
 
-import { BytesLib } from "solidity-bytes-utils/contracts/BytesLib.sol";
+import { BytesLib } from "./BytesLib.sol";
 import { SafeCast } from "@openzeppelin/contracts/utils/math/SafeCast.sol";
 
 import { ExecutorOptions } from "@layerzerolabs/lz-evm-messagelib-v2/contracts/libs/ExecutorOptions.sol";

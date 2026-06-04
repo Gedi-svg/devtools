@@ -83,7 +83,7 @@ abstract contract OFTCore is IOFT, OApp, OAppPreCrimeSimulator, OAppOptionsType3
      * ie. 4 sharedDecimals would be 1,844,674,407,370,955.1615
      */
     function sharedDecimals() public view virtual returns (uint8) {
-        return 6;
+        return 18;
     }
 
     /**
