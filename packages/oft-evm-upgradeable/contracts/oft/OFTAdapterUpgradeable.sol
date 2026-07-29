@@ -30,8 +30,9 @@ abstract contract OFTAdapterUpgradeable is OFTCoreUpgradeable {
      */
     constructor(
         address _token,
-        address _lzEndpoint
-    ) OFTCoreUpgradeable(IERC20Metadata(_token).decimals(), _lzEndpoint) {
+        address _lzEndpoint,
+        address _owner
+    ) OFTCoreUpgradeable(IERC20Metadata(_token).decimals(), _lzEndpoint, _owner) {
         innerToken = IERC20(_token);
     }
 

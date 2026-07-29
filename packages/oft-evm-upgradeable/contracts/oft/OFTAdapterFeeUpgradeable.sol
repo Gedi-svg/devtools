@@ -51,7 +51,7 @@ abstract contract OFTAdapterFeeUpgradeable is OFTAdapterUpgradeable, FeeUpgradea
      * @param _lzEndpoint The address of the LayerZero endpoint.
      * @dev _token must implement the IERC20 interface, and include a decimals() function.
      */
-    constructor(address _token, address _lzEndpoint) OFTAdapterUpgradeable(_token, _lzEndpoint) {}
+    constructor(address _token, address _lzEndpoint, address _delegate) OFTAdapterUpgradeable(_token, _lzEndpoint, _delegate) {}
 
     /**
      * @dev Initializes the OFTAdapter with the provided delegate.

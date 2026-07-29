@@ -14,7 +14,7 @@ abstract contract OFTUpgradeable is OFTCoreUpgradeable, ERC20Upgradeable {
      * @dev Constructor for the OFT contract.
      * @param _lzEndpoint The LayerZero endpoint address.
      */
-    constructor(address _lzEndpoint) OFTCoreUpgradeable(decimals(), _lzEndpoint) {}
+    constructor(address _lzEndpoint, address owner) OFTCoreUpgradeable(decimals(), _lzEndpoint, owner) {}
 
     /**
      * @dev Initializes the OFT with the provided name, symbol, and delegate.

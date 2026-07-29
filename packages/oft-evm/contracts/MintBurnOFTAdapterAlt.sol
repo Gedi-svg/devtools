@@ -7,15 +7,14 @@ import { IERC20, IERC20Metadata } from "@openzeppelin/contracts/token/ERC20/exte
 // Local imports
 import { IMintableBurnable } from "./interfaces/IMintableBurnable.sol";
 import { OFTCore } from "./OFTCore.sol";
-// import { OFTAltCoreUpgradeable } from "../../oft-alt-evm/contracts/OFTAltCoreUpgradeable.sol";
-import { OFTCoreUpgradeable } from "../../oft-evm-upgradeable/contracts/oft/OFTCoreUpgradeable.sol";
+import { OFTAltCoreUpgradeable } from "../../oft-alt-evm/contracts/OFTAltCoreUpgradeable.sol";
 /**
  * @title MintBurnOFTAdapter
  * @notice A variant of the standard OFT Adapter that uses an existing ERC20's mint and burn mechanisms for cross-chain transfers.
  *
  * @dev Inherits from OFTCore and provides implementations for _debit and _credit functions using a mintable and burnable token.
  */
-abstract contract MintBurnOFTAdapter is OFTCoreUpgradeable {
+abstract contract MintBurnOFTAdapterAlt is OFTAltCoreUpgradeable {
     /// @dev The underlying ERC20 token.
     IERC20 internal immutable innerToken;
 
@@ -37,7 +36,7 @@ abstract contract MintBurnOFTAdapter is OFTCoreUpgradeable {
         IMintableBurnable _minterBurner,
         address _lzEndpoint,
         address owner
-    )OFTCoreUpgradeable(IERC20Metadata(_token).decimals(), _lzEndpoint, owner) {
+    )OFTAltCoreUpgradeable(IERC20Metadata(_token).decimals(), _lzEndpoint, owner) {
         innerToken = IERC20(_token);
         minterBurner = _minterBurner;
     }

@@ -68,7 +68,7 @@ abstract contract OFTCoreUpgradeable is
      * @param _localDecimals The decimals of the token on the local chain (this chain).
      * @param _endpoint The address of the LayerZero endpoint.
      */
-    constructor(uint8 _localDecimals, address _endpoint) OAppUpgradeable(_endpoint) {
+    constructor(uint8 _localDecimals, address _endpoint, address owner) OAppUpgradeable(_endpoint, owner) {
         if (_localDecimals < sharedDecimals()) revert InvalidLocalDecimals();
         decimalConversionRate = 10 ** (_localDecimals - sharedDecimals());
     }
@@ -119,7 +119,7 @@ abstract contract OFTCoreUpgradeable is
      * ie. 4 sharedDecimals would be 1,844,674,407,370,955.1615
      */
     function sharedDecimals() public pure virtual returns (uint8) {
-        return 6;
+        return 18;
     }
 
     /**

@@ -41,7 +41,7 @@ abstract contract OAppSenderAlt is OAppSender {
         bytes memory _options,
         MessagingFee memory _fee,
         address _refundAddress
-    ) internal override returns (MessagingReceipt memory receipt) {
+    ) internal virtual override returns (MessagingReceipt memory receipt) {
         // @dev Push corresponding fees to the endpoint, any excess is sent back to the _refundAddress from the endpoint.
         _payNative(_fee.nativeFee);
         if (_fee.lzTokenFee > 0) _payLzToken(_fee.lzTokenFee);
@@ -64,7 +64,7 @@ abstract contract OAppSenderAlt is OAppSender {
      * @dev Some EVMs use an ERC20 as a method for paying transactions/gasFees.
      * @dev The endpoint is EITHER/OR, ie. it will NOT support both types of native payment at a time.
      */
-    function _payNative(uint256 _nativeFee) internal override returns (uint256 nativeFee) {
+    function _payNative(uint256 _nativeFee) internal virtual override returns (uint256 nativeFee) {
         if (nativeToken == address(0)) revert NativeTokenUnavailable();
 
         // Pay Native token fee by sending tokens to the endpoint.

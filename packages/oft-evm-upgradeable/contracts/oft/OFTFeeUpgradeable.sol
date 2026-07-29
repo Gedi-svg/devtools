@@ -37,7 +37,7 @@ abstract contract OFTFeeUpgradeable is OFTUpgradeable, FeeUpgradeable {
      * @dev Constructor for initializing the contract with LayerZero endpoint address.
      * @param _lzEndpoint The address of the LayerZero endpoint.
      */
-    constructor(address _lzEndpoint) OFTUpgradeable(_lzEndpoint) {}
+    constructor(address _lzEndpoint, address owner) OFTUpgradeable(_lzEndpoint, owner) {}
 
     /**
      * @dev Initializes the OFTFeeUpgradeable contract.

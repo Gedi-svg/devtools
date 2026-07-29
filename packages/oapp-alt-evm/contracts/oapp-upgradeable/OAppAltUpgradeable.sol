@@ -25,7 +25,7 @@ abstract contract OAppAltUpgradeable is OAppSenderAltUpgradeable, OAppReceiverUp
      * @param _endpoint The address of the LOCAL LayerZero endpoint.
      */
 
-    constructor(address _endpoint) OAppCoreUpgradeable(_endpoint) {}
+    constructor(address _endpoint, address owner) OAppCoreUpgradeable(_endpoint, owner) {}
 
     /**
      * @dev Initializes the OAppAlt with the provided delegate.

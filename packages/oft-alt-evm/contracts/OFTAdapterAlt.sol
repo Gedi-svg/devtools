@@ -19,7 +19,7 @@ import { OFTAltCore } from "./OFTAltCore.sol";
  */
 abstract contract OFTAdapterAlt is OFTAltCore {
     using SafeERC20 for IERC20;
-
+   
     IERC20 internal immutable innerToken;
 
     /**
